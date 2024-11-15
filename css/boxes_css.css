@@ -1,0 +1,189 @@
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-size: 1.5em; 
+}
+
+
+h1{
+
+    /* text */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;  /* 48px */
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: expanded;
+    text-transform: capitalize;
+    letter-spacing: .25em;
+    word-spacing: .25em;
+    text-align: center;
+
+    /* box */
+    border: 1px solid black
+}
+
+
+p{
+    font-size: 1em;  /* 24px */
+    line-height: 1.5em; /* 26px  ( we can see this details in inspect -> elements -> computed */  
+    text-align: justify;
+    text-indent: 50px;  
+
+    /* BOXES */
+
+    /* paragraph box border */
+    border: 5px solid black;   /* <line-width> || <line-style> || <color>  */
+
+    /* we can give width, style, color by separate */
+    border-width: 5px;  /* common for all side */
+    border-style: solid;
+    border-color: black;
+
+    border-top-width: 10px; /* specific side */
+    border-top-style: double;
+    
+    border-width: 7px 2px 3px 1px; /* different for every side (top, right, bottom, left) */
+    border-width: 7px 1px; /* top&bottom -7px, right&left -1px) */
+    border-width: 7px 1px 10px;  /* top - 7px, right&left -1px, bottom - 10px) */
+
+    border-style: solid dashed;
+    border-style: solid dashed;
+
+
+    /* paragraph box width */
+    width: 300px;  /* actual width of box(not depend on browser window)  */
+    width: 50%;    /* 50% of browser window taken as box width  */
+
+    /* paragraph box height */
+    /* height: 700px; */
+    
+    /* paragraph box min height */
+    max-height: 300px;  /* reponsiveness */
+
+    /* paragraph box background color */
+    background-color: antiquewhite;
+
+    /* paragraph box text overflow */
+    /* overflow: scroll;  hidden/scroll */
+
+
+    /* we need mention padding and margin everthing element, bcoz it wont inherit from parent  */
+
+    /* 
+    paragraph box padding (space between border and text) 
+    
+    - space between paragraph border and inside text
+    
+    */
+
+
+    padding: 15px;
+    padding-left: 20px;
+
+    /* 
+    paragraph box margin (space between border and outside/nearby element 
+    
+    - 1st paragraph - space between paragraph border and browser border
+    - 2nd paragraph inside div - space between paragraph border and div border 
+
+    */
+
+    margin: 30px;
+    margin: 20px auto 20px auto;  /* make center */
+
+
+    /* paragraph border radius - we should give moz and webkit line*/
+    border-radius: 10px;
+    border-radius: 80px 50px; /* 80px - horizondal radius, 50px - vertical radius */
+    -moz-border-radius: 10px;   /* firebox default feature it introduced before css*/
+    -webkit-border-radius: 80px 50px;  /* chrome/safari default feature it introduced before css*/
+
+    /* paragraph box shadow */
+    box-shadow: 10px 10px 10px gray;
+    -moz-border-box-shadow: 10px 10px 10px gray; 
+    -webkit-border-box-shadow: 10px 10px 10px gray;
+
+
+    /* border image */
+    border: 30px solid black;
+    border-image: url('/images/border.png') 40 round;  /* 30 - slice, round/stretch*/ 
+}
+
+/* 
+- if paragraph or anything is in inside div parent container then paragraph spec will change based on div container spec
+- if paragraph or anything is in outside or individual then paragraph spec will be based on browser spec
+
+*/
+.paradiv{
+    /* BOXES */
+
+    /* div box border */
+    border: 4px solid black;   /* <line-width> || <line-style> || <color>  */
+
+    /* div box width */
+    /* width: 600px;   */
+    width: 90%;   
+
+    /* div box height */
+    height: 800px;
+    
+    /* div box background color */
+    background-color: olive;
+
+    /* div box max width */
+    max-width: 1500px;  /* reponsiveness */
+
+    /* div box min width */
+    min-width: 700px;  /* reponsiveness */
+
+    margin: 20px;
+}
+
+
+/* 
+
+block element of list converted to inline elements
+
+
+block elements             inline elements
+--------------             ---------------
+
+Home 
+
+About                      Home About Contact
+
+Contact
+
+- we use this technique in navigation bar
+
+*/
+
+
+li{
+    display: inline;
+    margin: 10px
+}
+
+.coming-soon{
+    display: none;
+}
+
+/* sudo class  */
+
+p:first-letter{
+    font-size: 2em;
+    /* border: 1px solid black; */
+}
+
+a:link{  
+    color: blue;
+    border: 1px solid black;
+}
+
+a:hover{
+    color: orchid;
+}
+
+a:focus{
+    color: aqua;
+}

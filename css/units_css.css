@@ -1,0 +1,54 @@
+
+/* root */
+html{
+    /* 
+    
+    - it overwrites default browser 16px to 20px 
+    - if we are not mention in root(20px), it will take browser default value
+    - we can change browser default value in browser settings(browser -> settings-> font)
+    
+    */
+    font-size: 20px;  
+}
+
+
+.box{
+    /*
+     -> 20px(root) * 1.5 = 30px
+     -> em - relative measurement of parent
+
+     */
+    font-size: 1.5em;
+}
+
+
+.box .para1{
+    /*
+     -> 30px(parent) * 2em = 60px
+
+     */
+
+    font-size: 2em;
+}
+
+
+.box .para2{
+    /*
+     -> 20px(root) * 2em = 40px
+     -> rem - relative measurement of root
+
+     */
+
+    font-size: 2rem;
+}
+
+.box .para3{
+    /* 
+    
+    - para2 will change based on root or browser size(user changed or default)
+    - para3 wont consider browser font, coz here mention it in px.
+
+    */
+
+    font-size: 8px;
+}

@@ -1,0 +1,61 @@
+
+
+.box{
+    width: 130px;
+    height: 120px;
+    border: 2px solid black;
+}
+
+.box{
+    width: 50%;
+    height: 120px;
+    border: 2px solid black;
+}
+
+
+.box{
+    /* 
+    
+    -> vw - view port width
+    -> vh - view port height
+
+    Notes:
+    ------
+
+    -> 50% - when we mention percentage(%), it will calculate from parent not from root/browser/full screen width
+    -> 50vw - when we mention vw, it will calculate from direct root/browser/full screen width
+
+    -> check above things in browser responsive page
+    
+    Use Case:
+    ----------
+
+    -> designing landing page
+
+    */
+    width: 50vw;
+    height: 50vh;
+    border: 2px solid black;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+
+
+.box-2{
+    /*  
+    
+    -> 50vmin will compare vw and vh
+
+    -> 50vmin - in browser when i change page width(812) and page height(396) from responsive page, the box-2 will check both
+       width and height. it will calculate from lesser value. here page height(398) is lesser than width(812). 
+       so 50vmin(50% of 392) is equal to 198px. so box-2 width is 198 when we reduce the page size of 812*396
+
+    -> 50vmax - in browser when i change page width(812) and page height(396) from responsive page, the box-2 will check both
+       width and height. it will calculate from higher value. here page width(812) is higher than height(396). 
+       so 50vmax(50% of 812) is equal to 406px. so box-2 width is 406 when we reduce the page size of 812*396
+    
+    */
+    width: 50vmax;
+    height: 50vh;
+    border: 2px solid black;
+}

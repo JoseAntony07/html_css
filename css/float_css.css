@@ -1,0 +1,41 @@
+
+.blue-color{
+    background-color: blueviolet;
+    width:300px;
+    height:300px;
+    float:right;  /* sticky on right side*/
+    clear: left;  /* avoid left side disturbtion*/
+}
+
+.yellow-color{
+    background-color: yellow;
+    width:300px;
+    height:300px;
+    float:left;   /* sticky on left side*/
+    /* clear: both; */   /* avoid both side disturbtion*/
+}
+
+.top-col p{
+    width: 30%;
+    float: left;
+}
+
+.middle-col p{
+    width: 30%;
+    float: left;
+    /* clear: right; */
+}
+
+.bottom-col p{
+    width: 30%;
+    float: left;
+    /* clear: left; */
+}
+
+.middle-col p:nth-child(3){
+    clear: left;
+}
+
+.bottom-col p:nth-child(2){
+    clear: left;
+}

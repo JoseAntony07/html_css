@@ -1,0 +1,164 @@
+
+
+.container{
+
+    /* 
+    
+    -> paragraph or content should be in div container 
+    -> then we can easily handle text box alingment using flex box
+    
+    */
+    display: flex;
+    flex-direction: row;  /* row/column (conainer will arrange the boxes in the particular direction)*/
+}
+
+
+.para1{
+    background-color: lightgreen;
+    flex: 1;  /* all paragraph box width are same(3 text box - 1:1:1)*/
+    order: 1;  /* change the box order */
+}
+
+.para2{
+    background-color: darksalmon;
+    flex: 1; /* all paragraph box width are same(3 text box - 1:1:1)*/
+    order: 3;
+}
+
+.para3{
+    background-color: cornsilk;
+    /* flex: 1; all paragraph box width are same(3 text box - 1:1:1) */
+
+    flex: 2; /* increasing para 3 width alone(3 text box - 1:1:2)*/
+
+    order: 2;
+}
+
+
+/* --------------------------------------------------------------------------------------------- */
+
+
+
+.outerbox{
+    background-color: beige;
+    min-height: 400px;  /* 400px < */
+    display: flex;
+
+    /* 
+    
+    -> Flex box direction: row (all internal boxes are aligned in horizontal direction)  --->
+
+        - main axis alignment in row (left to right direction) -> justify-content(flex-start, center, flex-end)
+        - cross axis alignment in row (up to down direction) -> align-items(flex-start, center, flex-end)
+    
+    
+    */
+    flex-direction: row;
+    justify-content: center;  
+    align-items: center;
+
+
+    /* 
+    
+    -> Flex box direction: column (all internal boxes are aligned in vertical direction)  --->
+
+        - main axis alignment in column (up to down direction) -> justify-content(flex-start, center, flex-end)
+        - cross axis alignment in column (left to right direction) -> align-items(flex-start, center, flex-end)
+    
+    
+    */
+    /* flex-direction: column;
+    justify-content: flex-start;  
+    align-items: flex-end; */
+
+
+    /* we can use this for proper margin */
+    /* justify-content: space-between;  giving proper space between all boxes */
+    /* justify-content: space-around; giving space in end boxes left and right space */
+
+    /* stretch to full height (before using this, hide the height) */
+    /* align-items: stretch;  */
+
+
+    /* move internal box to next when space is insufficent(original width of the internal box won't be changed) */
+    /* flex-wrap: wrap; */
+}
+
+
+.box{
+    width:150px;
+    height: 150px;
+    background-color: blue;
+    border: 2px solid white;
+
+}
+
+.box1{
+
+    /* align particular internal box */
+    /* align-self: flex-start; */
+
+    /* justify-self: start; */
+
+}
+
+.box4{
+    /*
+    
+    - increase particular box width 
+    - other 3 boxes taking default width and height we mentioned in root or parent
+    */
+
+    /* flex: 1;  */
+}
+
+
+.box2{
+
+    /*
+    
+    - when screen size increases then box sizes also should increase 
+    - here when screen size increases then box2 alone take full space in the overall screen size
+
+    */
+
+    /* flex-grow: 1; */
+
+    /* 
+    
+    - default width 0 
+    - if we removed this, internal box will take un equal space
+    
+    */
+    /* flex-basis: 0; */
+}
+
+
+.box3{
+
+    /*
+    
+    - when screen size increases then box sizes also should increase 
+    - here when screen size increases then box3 alone take full space in the overall screen size
+    - it taking more extra space than box2
+    */
+
+    /* flex-grow: 2;   */
+    /* flex-basis: 0; */
+
+    /* - when screen size decreses then box sizes should not decrease  */
+    flex-shrink: 0;
+
+    /* - when screen size decreses then box sizes should decrease, when number increases here box will decrease very fast */
+    flex-shrink: 2;
+
+
+    /* 
+    
+    - all in one 
+    - flex: flex grow, flex shrink, flex basis
+
+    */
+
+    flex: 1 2 0px;
+}

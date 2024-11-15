@@ -1,0 +1,121 @@
+
+/* pixle - 1/125 of an inch */
+
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif; /* if browser doesn't have Georgia then browser will show second font and vice versa */
+    font-size: 1.5em;  /* 16px default, 16px - 100% - 1em (ex: 12px - 75%) */
+}
+
+/* 
+
+- if we mention 'em' in body it automatically set as base size, from there it calculate for child 
+- in  body font-size: 1.5em, it will automatically take 1.5em for child(if we didnt mention specific font for child)
+- in  body font-size: 1.5em and h1(child) font-size: 2em then child font size will convert to 1.5em => 24px => 24*2em =>48px 
+- if user sets some size in their browser, then em will calculate based on user measurement. 
+- so em is best for dynamic font size for every user
+- but if we use 16px in child means it wont change even user has sets diff font in their laptop, its fixed
+
+*/
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;  /* 48px */
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: expanded;
+    text-transform: capitalize;
+    /* text-decoration: underline; */
+    letter-spacing: .25em;
+    word-spacing: .25em;
+    text-align: center;
+}
+
+
+p{
+    font-size: 1em;  /* 24px */
+    line-height: 1.5em; /* 26px  ( we can see this details in inspect -> elements -> computed */  
+    text-align: justify;
+    text-indent: 50px;  
+    /* text-shadow: 2px 2px 2px gray; */
+}
+
+
+/* sudo class  */
+
+p:first-letter{
+    font-size: 2em;
+}
+
+
+/* not visited link */
+a:link{  
+    color: blue;
+}
+
+a:visited{
+    color: brown;
+}
+
+/* when we hover on link */
+a:hover{
+    color: orchid;
+}
+
+/* when we use tab */
+a:focus{
+    color: aqua;
+}
+
+/* color will change, when we clicking the link */
+a:active{
+    color: green;
+}
+
+
+/* selectors */
+
+
+/* p tag + class name */
+p.mypara {
+    color: rgb(17, 137, 19);
+}
+
+/* p tag + class attribute */
+p[class]{
+    color: blue;
+}
+
+/* p tag + id attribute */
+p[id]{
+    color: gray;
+}
+
+p[id='paraid']{
+    color: yellow;
+}
+
+/* p#paraid{
+    color: black;
+} */
+
+
+/* class may have multiple class names, here we are selecting any one of them */
+p[class~='mypara']{
+    color: grey;
+}
+
+/* any one of class name started with below character */
+p[class^='m']{
+    color: yellow;
+}
+
+/* any one of class name ended with below character */
+p[class$='a']{
+    color: green;
+}
+
+/* any paraticular letter or combination of letter in the class values */
+p[class*='assp']{
+    color: gray
+}

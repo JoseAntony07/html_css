@@ -1,0 +1,17 @@
+
+
+.container{
+    width:300px;
+    height: 300px;
+    margin: auto;
+    /* background-color: blue; */
+    /* background: linear-gradient(blue, green, yellow); */
+    /* background: linear-gradient(to left, blue, green, yellow);  to right */
+    /* background: linear-gradient(to top right, blue, green, yellow);  */
+    /* background: linear-gradient(blue 10%, green, yellow); */
+    /* background: linear-gradient(120deg, blue, green, yellow); */
+    /* background: linear-gradient(blue 10%, green 30px, yellow); */
+    /* background: radial-gradient(blue, green, yellow); */
+    /* background: repeating-linear-gradient(blue 10px, green 5px, yellow 15px); */
+    background: repeating-radial-gradient(blue 10px, green 5px, yellow 15px);
+}

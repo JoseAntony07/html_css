@@ -1,0 +1,35 @@
+
+
+
+h1{
+    color: green;
+
+}
+
+h2{
+    /* color: rgb(red, green, blue); */
+    color: rgb(0, 128,0);
+}
+
+h3{
+    color: #008000;
+}
+
+h4{
+    /* background-color: hsl(hue, saturation, lightness); */
+    background-color: hsl(120°, 100%, 25%);  /* hsl not supported in my browser, so browser will automatically take below bg color of rgb*/
+    background-color: rgb(0, 128,0);
+}
+
+h5{
+    /* background-color: rgba(red, green, blue, alpha); */
+    background-color: rgba(0, 128,0, 0.8);
+}
+
+
+h6{
+    /* color: hsla(hue, saturation, lightness, alpha)  i.e, alpha - 0 to 1*/
+    color: hsla(120°, 100%, 25%, 0.8);
+}
+
+/* hsl, hsla - not supported in my browser as it is new feature in css 3 */

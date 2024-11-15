@@ -1,0 +1,45 @@
+
+1) <div class="card featured">Featured Item</div>
+
+- The class attribute is used to assign one or more class names to an HTML element. Multiple elements can share the same class name,
+  allowing you to apply the same styles or behaviors to them.
+
+- Use class for styling multiple elements that share the same styles or behaviors. It allows for reusability and flexibility.
+
+
+2) <h1 id="main-title">Welcome to My Website</h1>
+
+- The id attribute is used to assign a unique identifier to an HTML element. Each id must be unique within a page,
+  meaning no two elements should have the same id.
+
+- Use id for uniquely identifying a specific element that will be styled or manipulated individually. 
+  It is essential for JavaScript functionality and creating anchor links.
+
+
+Good Practice:
+--------------
+
+- Keep in mind that using id for styling purposes is generally discouraged since IDs are meant to be unique.
+  For styles that apply to multiple elements, always prefer class.
+
+
+Example for multi class in single element:
+------------------------------------
+
+- <element class="class1 class2 class3">Content here</element>
+
+- <div class="box highlight large">This is a box with multiple classes.</div>
+
+.box {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.large {
+    font-size: 20px;
+    padding: 20px;
+}

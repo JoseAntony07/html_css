@@ -1,0 +1,69 @@
+### 1. **Absolute Path**:
+An absolute path is the full URL to the resource. It starts from the root of the website or even includes the domain name.
+
+```html
+<a href="https://www.example.com/links/restaurant/index.html">Restaurant Home</a>
+<a href="https://www.example.com/links/restaurant/menu.html">Restaurant Menu</a>
+```
+- This is helpful when linking to external sites or if you want to provide the full path to a resource on the same website.
+
+### 2. **Relative Path (Same as Your Example)**:
+A relative path links to a file relative to the current file location.
+
+```html
+<a href="/links/restaurant/index.html">Restaurant Home</a>
+<a href="/links/restaurant/menu.html">Restaurant Menu</a>
+```
+- This assumes the file is on the same domain, starting from the root (`/`).
+
+### 3. **Relative Path (Within the Same Directory)**:
+If the files are in the same directory as the current file, you can simply specify the file name.
+
+```html
+<a href="index.html">Restaurant Home</a>
+<a href="menu.html">Restaurant Menu</a>
+```
+- This is useful when both the current file and the linked file are in the same folder.
+
+### 4. **Relative Path (Navigating Up Directories)**:
+You can use `..` to move up a directory. This is called a **relative path traversal**.
+
+```html
+<a href="../index.html">Go to Parent Folder Home</a>
+<a href="../../index.html">Go to Two Levels Up</a>
+```
+- **`../`** moves up one directory, and **`../../`** moves up two directories.
+
+### 5. **Root-relative Path**:
+You can use a path that starts from the root (`/`) of your website. This is what you’ve already used.
+
+```html
+<a href="/links/restaurant/index.html">Restaurant Home</a>
+<a href="/links/restaurant/menu.html">Restaurant Menu</a>
+```
+- The path begins at the root directory of the website.
+
+### 6. **Anchor Links (For Same-Page Navigation)**:
+You can use anchor links to navigate to a specific section of the same page or another page by targeting an `id` within that page.
+
+```html
+<a href="#section1">Go to Section 1</a> <!-- Same page -->
+<a href="menu.html#section2">Go to Section 2 in Menu</a> <!-- Different page -->
+```
+
+### 7. **Mailto and Other Protocols**:
+If you're linking to an email or other protocol-based resource (like FTP), you can use specific protocols like `mailto` or `tel`.
+
+```html
+<a href="mailto:example@example.com">Send Email</a>
+<a href="tel:+1234567890">Call Us</a>
+```
+
+### 8. **JavaScript-based Paths** (for Single Page Applications):
+In frameworks like Vue.js or React, you might use `router-link` or similar components for internal navigation.
+
+```html
+<router-link to="/restaurant/menu">Restaurant Menu</router-link>
+```
+
+These are different ways you can specify paths, depending on your needs and project structure.

@@ -1,0 +1,73 @@
+
+
+body{
+
+    /* 
+    
+    - no-repeat: Prevents the background from repeating.
+    - center center: Centers the image horizontally and vertically.
+    - fixed: Fixes the background so it stays in place while scrolling.
+    - background-size: cover: Ensures the image covers the entire viewport while maintaining 
+                              its aspect ratio (it won't stretch).
+
+    */
+    background: url('/images/register_form_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+
+/* signup box div */
+
+.signup{
+    background-color: rgba(0, 0,0, 0.5);  /* 0.5 - box transperancy level*/
+    width: 300px; /* signup box width*/
+    margin: 200px auto;  /* change signup box position to center*/
+    border-radius: 10px;
+    border: 2px solid black; 
+    color: white;  /* text color */
+    padding: 7px;
+
+}
+
+/* h3 tag */
+.signup h3{
+    text-align: center;
+}
+
+.text_input{
+    margin: 2px auto 10px auto;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    
+}
+
+.text_label{
+    display: block;
+    margin-left: 4px;
+
+}
+
+
+.btn{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+button{
+    background-color: aquamarine;
+    font-size: 15px;
+    padding: 8px 10px;
+}
+
+.text_input:focus{
+    background-color: aquamarine;
+}
+
+.radio_btn{
+    accent-color: aquamarine;  /* radio round color*/
+}

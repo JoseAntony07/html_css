@@ -1,0 +1,66 @@
+
+.blue-color{
+    background-color: blueviolet;
+    width:300px;
+    height:300px;
+    margin: 30px;
+    /* position: relative; */
+}
+
+.yellow-color{
+    background-color: yellow;
+    width:50px;
+    height: 50px;
+    position: sticky;
+    top: 10px;
+    left:50px;
+}
+
+h2{
+    /* position: relative; */
+}
+
+
+/* 
+
+1) static
+
+    -> wont move to any place. its default one
+
+2) relative
+    
+    position: relative;             
+    top: 30px;                       
+    left:50px;                       
+
+    -> position change from initial position
+
+3) absolute
+
+    -> offset(position change from non static parent(relative position parent))
+
+    i)
+
+    .yellow-color{                                         .blue-color{}
+        position: absolute;
+        top: 10px;
+        left:50px;
+}
+
+    -> position refered from body, coz  .blue-color is static parent
+
+
+    ii)                                                    .blue-color{ position: relative;}
+
+    -> position refered from .blue-color, coz  .blue-color is non static parent
+
+4) fixed
+
+    -> it wont change the position even when we scroll up and down
+
+5) sticky
+
+    -> it will move up and down untill it reaches the offset positions, once it reached it wont
+       change then its act like fixed
+
+*/

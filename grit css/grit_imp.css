@@ -1,0 +1,65 @@
+
+
+body{
+    background-color: bisque;
+}
+
+.outerbox{
+    display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: 100px 200px;
+
+    grid-auto-rows: 200px;
+    gap: 20px;
+
+    /* Added extra height to demonstrate the grid moving to the bottom */
+    /* so we can check  align-content: end; flow */
+    height: 800px; 
+
+    /* whole grid move from top to bottom */
+    align-content: end;
+
+    /* whole grid move from left to right */
+    justify-content: center; 
+
+    /* inside grid box content move from top to bottom  */
+    align-items: start;
+
+    /* inside grid box content move from left to right  */
+    justify-items: end;
+}   
+
+
+.box{
+    background-color: green;
+    color: white;
+    /* border: 2px solid white; */
+    font-size: 2rem;
+
+    /* for number(1,2....7) center purpose */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.box1{
+    justify-self: center;
+}
+
+
+.box4{
+
+    align-self: flex-end;
+}
+
+
+.box6{
+    align-self: stretch;
+    justify-self: stretch;
+
+    /* number moved to starting position purpose */
+    justify-content: start;  
+}

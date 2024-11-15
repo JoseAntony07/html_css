@@ -1,0 +1,87 @@
+
+body{
+    background-color: bisque;
+}
+
+.container{
+    display: grid;
+
+    /* 
+    
+    - split 3 equal columns(30% 30% 30%)
+    - some extra spaces are remaining in last, bcoz we are using %
+
+    */
+    grid-template-columns: 30% 30% 30%;  
+
+     /* 
+    
+    - split 3 equal columns(1fr 2fr 1fr)
+    - there is no extra spaces are remaining in last, bcoz we are using fr
+    - fr - fractional unit
+
+    */
+    grid-template-columns: 1fr 2fr 1fr;  /* 300px 1 fr 2 fr - we can give like this */
+
+
+    /* first two column fixed, third occupy remaining places */
+    grid-template-columns: 200px 300px auto;
+
+
+    /* 
+    
+    - repeat(3, 1fr 2fr 1fr)  == 1fr 1fr 1fr
+    - 3 -> 3 columns needed
+    - 1fr-> all columns box size
+
+    */
+    grid-template-columns: repeat(3, 1fr);
+
+
+    /* 
+    
+    - 1st  column size should be min 200px max 1fr when we reduce and increasing the screen size
+    
+    */
+    grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
+
+
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+
+    /* 
+    
+    - auto-fit - based on screen size,column will come
+
+    */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+
+    /* 
+    
+    - if total screen size is 600px, and we have 2 para div
+    - auto-fit - it will create 2 boxes with size of 200px 200px(less screen size) and 1fr 1fr(max screen size)
+                 it will occupy whole screen size(fit the screen)
+
+    - auto-fill - it will create 2 boxes with size of 200px 200px 
+                - it wont take whole screen size, it only take which we mentioned(200px 200px)
+
+    */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    
+
+    grid-template-rows: 1fr 2fr 1fr;
+
+    
+    /* column-gap: 20px; */
+    /* row-gap: 20px; */
+
+    gap: 20px; /* column-gap/row-gap */
+}
+
+
+.para{
+    padding: 1rem;
+    background-color: steelblue;
+    color: white;
+
+}

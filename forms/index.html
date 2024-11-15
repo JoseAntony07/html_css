@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms</title>
+</head>
+<body>
+    <form action="welcome.html" method="GET" enctype="multipart/form-data">
+        <div>
+            <label for="username">User Name</label>  <!-- for and id should be same, we are linking both-->
+            <input type="text" name="user_name" id="username" required>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>  <!-- name - api payload key {'email': }-->
+        </div>
+        
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" minlength="4" required>
+        </div>
+
+        <div>
+            <label for="dob">Date of birth</label>
+            <input type="date" name="dob" id="dob">
+        </div>
+
+        <div>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+        </div>
+
+        <div>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label>
+        </div>
+
+        <div>
+            <label for="url">Linkdin Url</label>
+            <input type="url" name="linkdin_url" id="url">
+        </div>
+        
+        <div>
+            <label for="experience">Experience(years)</label>
+            <input type="number" name="experience" id="experience" min="1" max="20">
+        </div>
+
+        <div>
+            <label for="contact">Contact Number</label>
+            <input type="tel" name="contact" id="contact" maxlength="10">
+        </div>
+
+        <div>
+            <label for="resume">Resume</label>
+            <input type="file" name="resume" id="resume">
+        </div>
+        
+        <div>
+            <label for="secret_key"></label>
+            <input type="hidden" name="secret_key" value="7869">  <!-- hidden - it wont be visible for user-->
+        </div>
+
+        <div>
+            <label for="color">Change ui color</label>
+            <input type="color" name="ui_color" id="color">
+        </div>
+
+        <div>
+            <input type="checkbox" name="is_email" id="is_email" value="true"> <!-- value - api payload value {'is_email': true}-->
+            <label for="is_email">Email Settings</label>
+            
+        </div>
+
+        <div>
+            <input type="checkbox" name="is_sms" id="is_sms">
+            <label for="is_sms">Sms Settings</label>
+        </div>
+
+        <div>
+            <label for="about">About</label>
+            <textarea name="about" id="about" cols="30" rows="5" placeholder="100 characters only...!"></textarea>
+        </div> 
+
+        <div>
+            <label for="country">Country</label>
+            <select name="country" id="country">  <!-- {"country": "India"}-->
+                <option value="India">India</option>
+                <option value="Srilanka">Srilanka</option>
+                <option value="Pakistan">Pakistan</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="languages">Languages Known</label>
+            <select name="languages" id="languages" multiple> 
+                <option value="Tamil">Tamil</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+            </select>
+        </div>
+
+        <!-- <button type="submit">Sign Up</button> -->
+        <input type="image" src="submit.png" alt="submit button" width="90">
+        <button type="reset">Reset</button>
+        
+        
+    </form>
+</body>
+</html>
+
+
+
+<!-- http://127.0.0.1:5500/forms/welcome.html?user_name=jose&email=joseantony333.jan%40gmail.com&password=dfgfdg&dob=2024-10-16&gender=male&linkdin_url=https%3A%2F%2Fwww.cricbuzz.com%2F&experience=2&contact=9941211330&resume=&secret_key=7869&ui_color=%23000000&is_email=true&about=gsgsg&country=India&languages=Tamil&languages=English&x=63&y=15 -->
+
+
+
+<!--
+
+Notes:
+-----
+
+
+**`multipart/form-data`** is a content type used in HTTP requests, specifically for submitting **form data**
+ that includes files or large amounts of data. It allows sending different parts (fields) of the form as 
+ separate sections of the request, which can include text and binary data (such as files).
+
+### Key Aspects:
+- **Used for File Uploads**: When a form includes file inputs (e.g., an image, document), the form's `enctype` attribute is set to `multipart/form-data`. This ensures the form can handle binary file data alongside normal text fields.
+- **Multiple Parts**: The request body is divided into multiple parts, each containing either a text field or a file.
+- **Boundaries**: Each part is separated by a boundary string, which helps identify where one part ends, and another begins.
+- **Encoded Form Data**: Form data like text fields (input fields) are encoded differently from file data.
+
+**HTTP Request Example**:
+   Here's how the browser sends the form data in a `multipart/form-data` request:
+   ```
+   POST /upload HTTP/1.1
+   Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryE19zNvXGzXaLvS5C
+   
+   ------WebKitFormBoundaryE19zNvXGzXaLvS5C
+   Content-Disposition: form-data; name="username"
+   
+   joseantony
+   ------WebKitFormBoundaryE19zNvXGzXaLvS5C
+   Content-Disposition: form-data; name="profile_pic"; filename="profile.jpg"
+   Content-Type: image/jpeg
+   
+   [binary data for profile.jpg]
+   ------WebKitFormBoundaryE19zNvXGzXaLvS5C--
+   ```
+
+   - **Boundary**: The `boundary` string (`----WebKitFormBoundaryE19zNvXGzXaLvS5C`) separates the different parts of the form data.
+   - **Content-Disposition**: Indicates the form field’s name and, in the case of files, the filename and type.
+
+
+
+Q) for single payload(text, file and image field), will it split and make it different requests?
+
+
+No, when using **`multipart/form-data`** to send a single payload containing text, files, and images, 
+the data will be sent in **one single HTTP request**. However, the data is split into **different parts** 
+within that single request, not into multiple separate requests.
+
+### How `multipart/form-data` Handles Multiple Fields:
+
+- **Single Request**: The entire form submission, including text, files, and images, is transmitted as one 
+                      request. The different parts (text fields, file fields, etc.) are separated using 
+                      boundaries within the request body.
+- **Multiple Parts**: Each field in the form (text, file, image, etc.) is treated as a separate "part" of the
+                      payload but remains within the same request. These parts are delineated using boundary 
+                      markers within the request.
+
+### Example of a Single Request:
+Let’s say you are uploading a text field (`username`), an image (`profile_pic`), and a document (`resume`). All of this data is sent together in one request like this:
+
+```
+POST /upload HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryABCD1234
+
+------WebKitFormBoundaryABCD1234
+Content-Disposition: form-data; name="username"
+
+joseantony
+------WebKitFormBoundaryABCD1234
+Content-Disposition: form-data; name="profile_pic"; filename="photo.jpg"
+Content-Type: image/jpeg
+
+[binary data for photo.jpg]
+------WebKitFormBoundaryABCD1234
+Content-Disposition: form-data; name="resume"; filename="resume.pdf"
+Content-Type: application/pdf
+
+[binary data for resume.pdf]
+------WebKitFormBoundaryABCD1234--
+```
+
+### Key Points:
+- **One HTTP Request**: The text field, image, and file are sent in **one single HTTP request**.
+- **Boundary Separations**: The different parts of the payload (username, profile picture, resume) are separated by boundary markers, ensuring the server knows where each field starts and ends.
+- **No Splitting**: The server receives all the data in one go, but it can easily distinguish between text, file, and image data using the boundaries and headers (`Content-Disposition`, `Content-Type`).
+
+In summary, using `multipart/form-data` will not split the fields into separate requests.
+ It sends everything in one request, but the payload is structured into distinct parts so the server 
+ can process them correctly.
+
+
+-->

@@ -1,0 +1,177 @@
+
+
+.outerbox{
+
+    background-color: bisque;
+    display: flex;
+    height: 500px;
+    
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
+    /* align-items: center; */
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    
+    /* move all box top to bottom */
+    /* height: 1000px; */
+    /* align-content: end; */
+}
+
+
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    border: 2px solid white;
+}
+
+.box1{
+    /* align-self: end;   */
+    border: 2px solid black;
+}
+
+
+/* 
+
+
+flex
+----
+
+1) flex-direction = row
+
+-> left to right = justify-content
+-> top to bottom = align-items
+-> single box top to bottom = align-self
+
+
+2) flex-direction = column
+
+-> left to right = align-items
+-> top to bottom = justify-content
+-> single box left to right = align-self
+
+
+3) justify-self
+
+- Flexbox: justify-self is not supported in Flexbox.
+
+- Grid: justify-self is used to align individual items horizontally within their own grid cell.
+        It allows you to adjust the horizontal alignment of a single grid item 
+        (left, right, center, or stretch) inside its own cell.
+
+
+4) align-content
+
+- Flexbox: it works when flex-wrap is applied and there are multiple rows.
+
+- Grid: it works when there are multiple rows in the grid container.
+
+
+*/
+
+
+
+/* ----------------------------------------------------------------------------------------- */
+
+
+/* Reference code  - Hide below code when we run above */
+
+
+
+/* 
+
+- justify-content works because it's spacing the items horizontally. But align-content doesn't do anything since there is only one row of items.
+
+*/
+
+
+.outerbox {
+    display: flex;
+
+    /* Horizontal space between items */
+    justify-content: space-between;  
+
+     /* Won't work because there’s only one row */
+    align-content: space-around;    
+
+     /* Height of container */
+    height: 300px;                  
+    background-color: lightgray;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 10px;
+}
+
+
+.outerbox {
+    display: flex;
+
+    /* Enables wrapping into multiple rows */
+    /* flex-wrap: wrap;                  */
+
+    /* Horizontal space between items */
+    justify-content: space-between;  
+
+    /* Vertical space around the rows */
+    /* align-content: space-between; */
+    /* align-content: space-around;   */
+    
+    /* Height of container */
+    height: 300px;        
+
+    background-color: lightgray;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+
+.outerbox {
+    display: flex;
+
+    /* Distributes space horizontally between items */
+    justify-content: space-between;  
+
+    /* Aligns items at the bottom of the container */
+    align-items: flex-end;           
+
+     /* Height of the container */
+    height: 300px;                
+
+    background-color: lightgray;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+
+.outerbox {
+    display: grid;
+
+    align-content: space-between;  
+    justify-items: center;           
+
+    height: 300px;                
+
+    background-color: lightgray;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+

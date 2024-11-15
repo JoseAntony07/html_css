@@ -1,0 +1,80 @@
+
+.para1{
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+.para2{
+    background-color: darksalmon;
+    padding: 10px;
+}
+
+.para3{
+    background-color: cornsilk;
+    padding: 10px;
+}
+
+
+
+@media all and (min-width:800px){     /* all, screen, print, speech */
+    .container p{
+        width: 30%;
+        float: left;
+        padding: 10px;
+        margin: 2px;
+    }
+
+    .container .para3{
+        background-color: aqua;
+    }
+}
+
+
+@media print {
+    body{
+        background-color: none;
+    }
+}
+
+
+/* 
+
+Responsive Design:
+------------------
+
+-> we change the html content and element based on device width(diff devices ex: mobile, tab, desktop) 
+   is called responsive design.
+
+
+Media query option:
+------------------
+
+-> all - it mention all the operation(screen, print, speech)
+-> print - we can modify the design, how it looks when we print our page(ctrl+p)
+-> screen - it mention all the devices
+-> speech - we can target speech screen reader devices
+
+Notes:
+------
+
+-> mobile to desktop - min-width(mobile first approach - best approach)  
+                     - min-width:800px means (800 > mobile, 800 < desktop)
+
+-> desktop to mobile - max-width
+                     - max-width:1000px means (1000 > mobile, 1000 < desktop)
+
+-> min-width/max-width - breakpoint/threshold
+
+-> when we 3 rules one by one, then last rule will overwrite other two. coz in css (Last Rule Applies).
+   In CSS, if multiple conflicting styles apply to the same element, the last one in the code will take precedence
+   (based on CSS cascading rules).
+
+
+Best Practices:
+---------------
+
+-> Use relative units (like %, em, or rem) instead of absolute units (px) for better responsiveness.
+-> Ensure to test your design across various devices and screen sizes.
+-> It's good to have a combination of both min-width and max-width queries to handle all breakpoints effectively.
+
+*/

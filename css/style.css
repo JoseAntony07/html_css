@@ -1,0 +1,155 @@
+
+/* External Css */
+
+
+/* Universal selector */
+
+*{  
+    color: blue;  /* color - property, blue - value */
+}
+
+
+/* Type selector */
+
+h3, h5{  /*  h4, h5 - selector */
+    color: brown;
+}
+
+
+h5{
+    color: yellow !important; /* !important - will ignore other rules(i.e above brown) used in h5 tag  */
+}
+
+/* Id selector */
+
+#intro{
+    color: black;
+}
+
+
+/* Class selector */
+
+.blue-color{
+    color: violet;
+}
+
+
+/* Child selector */
+
+div>p{
+    color:blueviolet
+}
+
+
+/* Descendants selector*/
+
+div a{
+    color: green;
+}
+
+
+/* Sibiling selector */
+
+h4~h6{
+    color: aqua;
+}
+
+
+/* Adjacent sibling selector */
+
+.adjacent h1 + h2 {
+    color: green
+}
+
+/* Inheritance - parent style properties will apply to child tags
+               - properties - color, font 
+
+*/
+
+
+
+/* 
+
+CSS rules:
+----------
+
+1. **Universal Selector:**
+
+   * {  
+       color: blue; 
+    }
+
+    - **Correct**. The universal selector (`*`) applies the specified styles to all elements.
+ 
+ 2. **Type Selector:**
+ 
+
+    h3, h5 {  
+        color: brown;
+    }
+
+    - **Correct**. This applies to both `<h3>` and `<h5>` elements.
+ 
+
+    h5 {
+        color: yellow !important; 
+    }
+
+    - **Correct**. The `!important` flag overrides any other rule for the `h5` tag, meaning `h5` will always have yellow color.
+ 
+ 3. **ID Selector:**
+ 
+    #intro {
+        color: black;
+    }
+
+    - **Correct**. The `#intro` targets an element with `id="intro"`.
+ 
+ 4. **Class Selector:**
+ 
+    ```css
+    .blue-color {
+        color: violet;
+    }
+    ```
+    - **Correct**. Targets elements with `class="blue-color"`. You can assign multiple class names as well.
+ 
+ 5. **Child Selector:**
+ 
+    div > p {
+        color: blueviolet;
+    }
+
+    - **Correct**. This targets only the `<p>` elements that are **direct** children of a `<div>`.
+ 
+ 6. **Descendant Selector:**
+ 
+    div a {
+        color: green;
+    }
+
+    - **Correct**. This targets all `<a>` elements that are descendants of any `<div>`, no matter how deeply nested.
+ 
+ 7. **General Sibling Selector:**
+ 
+    h4 ~ h6 {
+        color: aqua;
+    }
+
+    - **Correct**. This targets all `<h6>` elements that are **siblings** of an `<h4>`, but not necessarily directly adjacent (can be any sibling).
+ 
+ 8. **Adjacent Sibling Selector:**
+ 
+    .adjacent h1 + h2 {
+        color: green;
+    }
+
+    - **Correct**. This targets an `<h2>` that is **immediately** following an `<h1>` inside an element with class `adjacent`.
+ 
+ 9. **Inheritance:**
+
+    - **Correct** (but worth clarifying). Some CSS properties like `color` and `font-family` are inherited by child elements. Other properties like `padding` and `margin` are **not** inherited.
+ 
+
+*/
+
